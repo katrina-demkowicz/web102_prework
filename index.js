@@ -34,8 +34,9 @@ function addGamesToPage(games) {
             gameCard.classList.add("game-card")
             gameCard.innerHTML = `
             <img src="${game.img}" class="game-img" />
-            <p> ${game.name} <p>
+            <p> <b>${game.name}</b> <p>
             <p> ${game.description} <p>
+            <p> Backers: ${game.backers} <p>
             `;
             gamesContainer.appendChild(gameCard)
         });
@@ -54,7 +55,7 @@ function addGamesToPage(games) {
 
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
-addGamesToPage(GAMES_JSON)
+addGamesToPage(GAMES_JSON);
 
 /*************************************************************************************
  * Challenge 4: Create the summary statistics at the top of the page displaying the

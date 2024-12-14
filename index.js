@@ -157,18 +157,15 @@ let unfunded = GAMES_JSON.filter((game) => {
 const numUnfunded = unfunded.length;
 console.log(numUnfunded);
 //const numUnfundedGames = GAMES_JSON.reduce
-let fundedGames = GAMES_JSON.filter((game) => {
-    return game.pledged >= game.goal;
-});
 
 // create a string that explains the number of unfunded games using the ternary operator
 //one game unfunded
 const oneUnfundedStr = 
-    `A total of $${totalRaised.toLocaleString()} has been raised for ${fundedGames.length} games. 
+    `A total of $${totalRaised.toLocaleString()} has been raised for ${GAMES_JSON.length} games. 
     Currently, 1 game remains unfunded. We need your help to fund these amazing games!`;
 
 //multiple games unfunded
-const multipleUnfundedStr = `A total of $${totalRaised.toLocaleString()} has been raised for ${fundedGames.length} games. 
+const multipleUnfundedStr = `A total of $${totalRaised.toLocaleString()} has been raised for ${GAMES_JSON.length} games. 
     Currently, ${numUnfunded} games remains unfunded. We need your help to fund these amazing games!`;
 
 let fundGamesStr = (numUnfunded == 1) ? oneUnfundedStr : multipleUnfundedStr;
@@ -191,7 +188,18 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+let [firstGame, secondGame, ...others] = sortedGames;
+console.log(firstGame);
+console.log(secondGame);
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+const firstGameCard = document.createElement("div");
+firstGameCard.innerHTML = 
+`${firstGame.name}`;
+firstGameContainer.appendChild(firstGameCard);
 
 // do the same for the runner up item
+const secondGameCard = document.createElement("div");
+secondGameCard.innerHTML = 
+`${secondGame.name}`;
+secondGameContainer.appendChild(secondGameCard);

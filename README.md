@@ -25,7 +25,7 @@ I got rid of the cursor turning into the pointer when it hovered over the info s
 
 Here's a walkthrough of implemented features:
 
-<img src='https://imgur.com/e3157VH' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='katPrework.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with LICEcap
